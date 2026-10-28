@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ресторан «Чехов Сад» | Таганрог</title>
+  <meta name="description" content="Ресторан «Чехов Сад» в Таганроге. Русская и европейская кухня, уютная зеленая веранда, банкетный зал и живая музыка на Александровской 72.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --emerald-dark: #122119;
+      --emerald: #1c3629;
+      --emerald-card: #234333;
+      --gold: #d4af37;
+      --gold-light: #f5e6b3;
+      --cream: #fbf9f4;
+      --text-muted: #a6b8ae;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--emerald-dark);
+      color: var(--cream);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+    }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Header */
+    header {
+      background: rgba(18, 33, 25, 0.95);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 20px 0;
+      backdrop-filter: blur(10px);
+    }
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+    }
+    .logo-main {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .logo-sub {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      margin-top: -4px;
+    }
+    .nav-links a {
+      color: var(--cream);
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    
+    .btn {
+      display: inline-block;
+      padding: 13px 30px;
+      border-radius: 4px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #d4af37, #aa8522);
+      color: #122119;
+      font-weight: 700;
+    }
+    .btn-gold:hover {
+      background: linear-gradient(135deg, #f5e6b3, #d4af37);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+    }
+    .btn-outline {
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+    }
+    .btn-outline:hover {
+      background: rgba(212, 175, 55, 0.1);
+      color: #fff;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 130px 0 100px;
+      text-align: center;
+      background: 
+        radial-gradient(circle at 50% 30%, rgba(35, 67, 51, 0.8), rgba(18, 33, 25, 0.98)),
+        linear-gradient(rgba(18, 33, 25, 0.8), rgba(18, 33, 25, 0.95));
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    }
+    .hero-badge {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--gold);
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 36px;
+      font-weight: 300;
+    }
+    .hero-btns { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 80px 0;
+    }
+    .f-card {
+      background: var(--emerald-card);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 8px;
+      padding: 40px 28px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .f-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .f-icon { font-size: 2.5rem; margin-bottom: 16px; display: block; }
+    .f-card h3 { font-family: var(--font-serif); font-size: 1.5rem; color: var(--gold-light); margin-bottom: 10px; }
+    .f-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* Menu Preview */
+    .menu-sec { padding: 80px 0; border-top: 1px solid rgba(212, 175, 55, 0.15); }
+    .sec-title { text-align: center; margin-bottom: 50px; }
+    .sec-title h2 { font-family: var(--font-serif); font-size: 2.8rem; color: var(--gold-light); margin-bottom: 10px; }
+    .sec-title p { color: var(--text-muted); font-size: 1rem; }
+    
+    .dish-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .dish-item {
+      background: rgba(35, 67, 51, 0.5);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      padding: 24px 28px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .dish-info h4 { font-family: var(--font-serif); font-size: 1.35rem; color: #fff; margin-bottom: 6px; }
+    .dish-info p { font-size: 0.85rem; color: var(--text-muted); }
+    .dish-price { font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold); font-weight: 700; white-space: nowrap; margin-left: 20px; }
+
+    /* Booking / Banquet Banner */
+    .banquet-box {
+      background: linear-gradient(135deg, #1c3629, #122119);
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 60px 40px;
+      text-align: center;
+      margin: 80px 0;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+    .banquet-box h2 { font-family: var(--font-serif); font-size: 2.8rem; color: var(--gold-light); margin-bottom: 16px; }
+    .banquet-box p { color: var(--text-muted); max-width: 620px; margin: 0 auto 30px; font-size: 1.05rem; }
+
+    /* Contacts */
+    .contacts-sec {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 80px;
+      align-items: center;
+    }
+    .contact-item { margin-bottom: 20px; }
+    .contact-item span { font-size: 0.85rem; text-transform: uppercase; color: var(--gold); letter-spacing: 0.15em; display: block; margin-bottom: 4px; }
+    .contact-item strong { font-size: 1.15rem; color: #fff; }
+
+    footer {
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 30px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.6rem; }
+      .features-grid { grid-template-columns: 1fr; }
+      .dish-grid { grid-template-columns: 1fr; }
+      .contacts-sec { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        <span class="logo-main">ЧЕХОВ САД</span>
+        <span class="logo-sub">РЕСТОРАН • ТАГАНРОГ</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">О ресторане</a>
+        <a href="#menu">Меню</a>
+        <a href="#banquets">Банкеты</a>
+        <a href="#contacts">Контакты</a>
+        <a href="https://wa.me/+79198764900" target="_blank" class="btn btn-gold" style="margin-left: 20px;">Бронь стола</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="hero-badge">Традиции купеческого Таганрога</span>
+        <h1>Трапеза в тенистом саду<br>с чеховским настроением</h1>
+        <p>Изысканная русская и европейская кухня, живая музыка и атмосфера загородной дворянской усадьбы в самом центре города.</p>
+        <div class="hero-btns">
+          <a href="#menu" class="btn btn-gold">Ознакомиться с меню</a>
+          <a href="https://wa.me/+79198764900" target="_blank" class="btn btn-outline">Забронировать стол</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="features-grid" id="about">
+        <div class="f-card">
+          <span class="f-icon">🌳</span>
+          <h3>Зелёный сад</h3>
+          <p>Просторная летняя терраса, утопающая в цветах и зелени. Оазис тишины и прохлады в жаркий день.</p>
+        </div>
+        <div class="f-card">
+          <span class="f-icon">🍷</span>
+          <h3>Авторская кухня</h3>
+          <p>Блюда из свежей донской рыбы, сочные мясные стейки, домашние настойки и десерты от шефа.</p>
+        </div>
+        <div class="f-card">
+          <span class="f-icon">🎻</span>
+          <h3>Живая музыка</h3>
+          <p>Вечера саксофона, скрипки и фортепиано. Идеально для романтических ужинов и семейных торжеств.</p>
+        </div>
+      </div>
+
+      <!-- Меню -->
+      <section class="menu-sec" id="menu">
+        <div class="sec-title">
+          <h2>Избранное меню ресторана</h2>
+          <p>Блюда, ставшие визитной карточкой «Чехов Сада»</p>
+        </div>
+
+        <div class="dish-grid">
+          <div class="dish-item">
+            <div class="dish-info">
+              <h4>Судак по-чеховски с травами</h4>
+              <p>Нежное филе азовского судака с печеным картофелем и сливочно-икорным соусом</p>
+            </div>
+            <div class="dish-price">680 ₽</div>
+          </div>
+          <div class="dish-item">
+            <div class="dish-info">
+              <h4>Уха по-таганрогски с дымком</h4>
+              <p>Наваристая уха из благородных пород рыбы с расстегаем</p>
+            </div>
+            <div class="dish-price">490 ₽</div>
+          </div>
+          <div class="dish-item">
+            <div class="dish-info">
+              <h4>Стейк из вырезки на гриле</h4>
+              <p>Сочная говяжья вырезка с овощами гриль и брусничным соусом</p>
+            </div>
+            <div class="dish-price">890 ₽</div>
+          </div>
+          <div class="dish-item">
+            <div class="dish-info">
+              <h4>Паштет из утиной печени</h4>
+              <p>Подается с карамелизированным луком и хрустящей багетной бриошью</p>
+            </div>
+            <div class="dish-price">420 ₽</div>
+          </div>
+          <div class="dish-item">
+            <div class="dish-info">
+              <h4>Салат с ростбифом и вялеными томатами</h4>
+              <p>Микс салатов, нежный ростбиф, кедровые орешки и дижонская заправка</p>
+            </div>
+            <div class="dish-price">560 ₽</div>
+          </div>
+          <div class="dish-item">
+            <div class="dish-info">
+              <h4>Фирменный медовик с грецким орехом</h4>
+              <p>Приготовлен по старинному рецепту с таёжным мёдом и воздушным сметанным кремом</p>
+            </div>
+            <div class="dish-price">340 ₽</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Банкеты -->
+      <div class="banquet-box" id="banquets">
+        <h2>Свадьбы, банкеты и торжества</h2>
+        <p>Уютный зал вместимостью до 80 гостей и летняя терраса. Составим индивидуальное банкетное меню и поможем организовать ваш праздник на высшем уровне.</p>
+        <a href="https://wa.me/+79198764900" target="_blank" class="btn btn-gold">Обсудить мероприятие в WhatsApp</a>
+      </div>
+
+      <!-- Контакты -->
+      <div class="contacts-sec" id="contacts">
+        <div>
+          <span style="color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.85rem;">Ждём Вас</span>
+          <h2 style="font-family: var(--font-serif); font-size: 2.6rem; color: #fff; margin-bottom: 24px;">Ресторан «Чехов Сад»</h2>
+          <div class="contact-item">
+            <span>Адрес ресторана:</span>
+            <strong>г. Таганрог, ул. Александровская, 72</strong>
+          </div>
+          <div class="contact-item">
+            <span>Бронирование столов и банкетов:</span>
+            <strong>+7 (919) 876-49-00</strong>
+          </div>
+          <div class="contact-item">
+            <span>График работы:</span>
+            <strong>Ежедневно с 11:00 до 23:00</strong>
+          </div>
+        </div>
+        <div style="background: rgba(35, 67, 51, 0.6); border: 1px solid rgba(212,175,55,0.25); border-radius: 8px; padding: 36px; text-align: center;">
+          <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--gold-light); margin-bottom: 12px;">Бронирование в 1 клик</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">Напишите нам в WhatsApp количество гостей и желаемое время — администратор мгновенно подтвердит стол.</p>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="https://wa.me/+79198764900" target="_blank" class="btn btn-gold">Написать в WhatsApp</a>
+            <a href="https://vk.com/chekhov_sad" target="_blank" class="btn btn-outline">Мы ВКонтакте</a>
+            <a href="https://yandex.ru/maps/org/108232218842" target="_blank" class="btn btn-outline">Яндекс Карты</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Ресторан «Чехов Сад». Таганрог. Демонстрационный прототип сайта.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
